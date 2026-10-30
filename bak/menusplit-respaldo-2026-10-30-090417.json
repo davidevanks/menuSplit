@@ -1,0 +1,405 @@
+{
+  "version": 2,
+  "taxRate": 1500,
+  "tipRate": 1000,
+  "people": [
+    {
+      "id": "me",
+      "name": "Kenneth",
+      "isMe": true,
+      "paid": false
+    },
+    {
+      "id": "669decf2-9d53-4900-8996-debb63171761",
+      "name": "Jorge Gutierrez",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "3bc0615d-e841-4ee6-b67c-4c91774be43a",
+      "name": "Josseling Calero",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "59ca7476-2535-4a3b-9e76-e8218c3456e3",
+      "name": "Juan bustos",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "de522781-3613-43a7-a08d-d43ba797d515",
+      "name": "Paula Mercedes Bustos",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "9a6904fb-4bea-405a-b024-6ca2128de739",
+      "name": "Ana Bustos",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "c88e4db0-8d07-462e-a033-7e70c8d761b6",
+      "name": "Joaquin Bustos",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "5c463a0b-d69e-4583-9d8c-fec0049d5da9",
+      "name": "Laurel",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "a960005c-8617-4517-8c7f-74d9d845b2df",
+      "name": "Gisselle Granados",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "b3899e3a-60e1-4ab2-99fe-30bd2ea456c4",
+      "name": "Eliu",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "5bdef606-8a45-4f6d-8d8c-39ea97887a32",
+      "name": "Clara",
+      "isMe": false,
+      "paid": false
+    },
+    {
+      "id": "952535b7-cd5b-4d5f-b62a-db8d35c9bd2b",
+      "name": "Andrea",
+      "isMe": false,
+      "paid": false
+    }
+  ],
+  "products": [
+    {
+      "id": "original-0",
+      "name": "Hummus",
+      "price": 18400,
+      "note": "",
+      "owners": [
+        "b3899e3a-60e1-4ab2-99fe-30bd2ea456c4",
+        "952535b7-cd5b-4d5f-b62a-db8d35c9bd2b"
+      ]
+    },
+    {
+      "id": "original-1",
+      "name": "Té caliente",
+      "price": 5500,
+      "note": "",
+      "owners": [
+        "5c463a0b-d69e-4583-9d8c-fec0049d5da9"
+      ]
+    },
+    {
+      "id": "original-2",
+      "name": "TacosFrijolP",
+      "price": 12900,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-3",
+      "name": "Croquetas P",
+      "price": 11000,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-4",
+      "name": "QuesoHamburguesa",
+      "price": 45000,
+      "note": "Papas Crispy incluidas",
+      "owners": [
+        "me"
+      ]
+    },
+    {
+      "id": "original-5",
+      "name": "Té helado",
+      "price": 6500,
+      "note": "",
+      "owners": [
+        "me",
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-6",
+      "name": "E. César",
+      "price": 36000,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-7",
+      "name": "Limonada",
+      "price": 8000,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-8",
+      "name": "FiletitosPollos",
+      "price": 19500,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-9",
+      "name": "Jugo de melón",
+      "price": 6409,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6",
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-10",
+      "name": "PolloLight",
+      "price": 35000,
+      "note": "",
+      "owners": [
+        "3bc0615d-e841-4ee6-b67c-4c91774be43a",
+        "952535b7-cd5b-4d5f-b62a-db8d35c9bd2b",
+        "669decf2-9d53-4900-8996-debb63171761"
+      ]
+    },
+    {
+      "id": "original-11",
+      "name": "Canada Dry Ginger Ale",
+      "price": 5500,
+      "note": "",
+      "owners": [
+        "952535b7-cd5b-4d5f-b62a-db8d35c9bd2b"
+      ]
+    },
+    {
+      "id": "original-12",
+      "name": "Pulled Pork",
+      "price": 37000,
+      "note": "",
+      "owners": [
+        "b3899e3a-60e1-4ab2-99fe-30bd2ea456c4"
+      ]
+    },
+    {
+      "id": "original-13",
+      "name": "Limonada HierbaBuena",
+      "price": 10000,
+      "note": "",
+      "owners": [
+        "b3899e3a-60e1-4ab2-99fe-30bd2ea456c4"
+      ]
+    },
+    {
+      "id": "original-14",
+      "name": "SteakFrites",
+      "price": 61500,
+      "note": "",
+      "owners": [
+        "59ca7476-2535-4a3b-9e76-e8218c3456e3"
+      ]
+    },
+    {
+      "id": "original-15",
+      "name": "Jamaica",
+      "price": 4600,
+      "note": "",
+      "owners": [
+        "59ca7476-2535-4a3b-9e76-e8218c3456e3"
+      ]
+    },
+    {
+      "id": "original-16",
+      "name": "E. Asia con PolloAsia",
+      "price": 35000,
+      "note": "",
+      "owners": [
+        "5bdef606-8a45-4f6d-8d8c-39ea97887a32"
+      ]
+    },
+    {
+      "id": "original-17",
+      "name": "SopaTomate.G",
+      "price": 18400,
+      "note": "",
+      "owners": [
+        "5c463a0b-d69e-4583-9d8c-fec0049d5da9"
+      ]
+    },
+    {
+      "id": "original-18",
+      "name": "S.B. Club de Pollo",
+      "price": 36000,
+      "note": "",
+      "owners": [
+        "c88e4db0-8d07-462e-a033-7e70c8d761b6"
+      ]
+    },
+    {
+      "id": "original-19",
+      "name": "Canada Dry Soda",
+      "price": 5500,
+      "note": "",
+      "owners": [
+        "5bdef606-8a45-4f6d-8d8c-39ea97887a32"
+      ]
+    },
+    {
+      "id": "original-20",
+      "name": "Chelada",
+      "price": 1837,
+      "note": "",
+      "owners": [
+        "5bdef606-8a45-4f6d-8d8c-39ea97887a32"
+      ]
+    },
+    {
+      "id": "original-21",
+      "name": "E. Zacatelimón",
+      "price": 51500,
+      "note": "",
+      "owners": [
+        "9a6904fb-4bea-405a-b024-6ca2128de739"
+      ]
+    },
+    {
+      "id": "original-22",
+      "name": "Fresa-Naranja",
+      "price": 17500,
+      "note": "",
+      "owners": [
+        "9a6904fb-4bea-405a-b024-6ca2128de739"
+      ]
+    },
+    {
+      "id": "original-23",
+      "name": "JugoNaranja.G",
+      "price": 12000,
+      "note": "",
+      "owners": [
+        "669decf2-9d53-4900-8996-debb63171761"
+      ]
+    },
+    {
+      "id": "original-24",
+      "name": "Limonada Hierbabuena Frozen",
+      "price": 11000,
+      "note": "",
+      "owners": [
+        "3bc0615d-e841-4ee6-b67c-4c91774be43a"
+      ]
+    },
+    {
+      "id": "original-25",
+      "name": "Filetes de Pollo",
+      "price": 33000,
+      "note": "",
+      "owners": [
+        "de522781-3613-43a7-a08d-d43ba797d515"
+      ]
+    },
+    {
+      "id": "original-26",
+      "name": "Batido Verde Tropical",
+      "price": 13000,
+      "note": "",
+      "owners": [
+        "de522781-3613-43a7-a08d-d43ba797d515",
+        "a960005c-8617-4517-8c7f-74d9d845b2df"
+      ]
+    },
+    {
+      "id": "original-27",
+      "name": "Ext. Pan pita",
+      "price": 2747,
+      "note": "",
+      "owners": [
+        "me"
+      ]
+    },
+    {
+      "id": "original-28",
+      "name": "Salmón a la Parrilla",
+      "price": 66500,
+      "note": "",
+      "owners": [
+        "a960005c-8617-4517-8c7f-74d9d845b2df"
+      ]
+    },
+    {
+      "id": "original-29",
+      "name": "Crispy Chicken Burger",
+      "price": 38000,
+      "note": "Papas Crispy incluidas",
+      "owners": [
+        "a960005c-8617-4517-8c7f-74d9d845b2df"
+      ]
+    },
+    {
+      "id": "original-30",
+      "name": "Batido Agua",
+      "price": 7324,
+      "note": "",
+      "owners": [
+        "a960005c-8617-4517-8c7f-74d9d845b2df",
+        "a960005c-8617-4517-8c7f-74d9d845b2df"
+      ]
+    },
+    {
+      "id": "original-31",
+      "name": "Empaque Postres",
+      "price": 1648,
+      "note": "",
+      "owners": [
+        "de522781-3613-43a7-a08d-d43ba797d515"
+      ]
+    },
+    {
+      "id": "original-32",
+      "name": "Cumpleañero Z1",
+      "price": 0,
+      "note": "",
+      "owners": [
+        "me"
+      ]
+    },
+    {
+      "id": "original-33",
+      "name": "Empaque Vaso Frío 16 oz",
+      "price": 549,
+      "note": "",
+      "owners": [
+        "a960005c-8617-4517-8c7f-74d9d845b2df"
+      ]
+    },
+    {
+      "id": "original-34",
+      "name": "Americano.P",
+      "price": 7500,
+      "note": "",
+      "owners": [
+        "me",
+        "de522781-3613-43a7-a08d-d43ba797d515",
+        "59ca7476-2535-4a3b-9e76-e8218c3456e3"
+      ]
+    }
+  ]
+}

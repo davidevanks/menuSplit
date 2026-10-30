@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2457c5">
+  <title>MenuSplit · La cuenta, clara</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-icon" aria-hidden="true">÷</span> MenuSplit</a><span id="save-status" role="status">Guardado en este navegador</span></header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">Una mesa. Cada quien su parte.</p><h1>La cuenta, clara.</h1><p>Asigna los consumos y lleva el control de quién ya pagó.</p></div><div class="account-actions" role="group" aria-label="Respaldos y restauración"><button id="export-json" class="button secondary" type="button">Exportar JSON</button><button id="import-json" class="button secondary" type="button">Importar JSON</button><button id="reset" class="button secondary" type="button">Restablecer factura original</button></div></div>
+    <input id="import-file" type="file" accept=".json,application/json" hidden>
+    <p id="backup-status" class="backup-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div id="storage-error" class="notice error" role="alert" hidden></div>
+    <section class="overview" aria-label="Resumen de la cuenta">
+      <div class="total"><span>Total de la factura</span><strong id="grand-total"></strong><small id="bill-summary"></small></div>
+      <div><span>Total cubierto</span><strong id="covered-total"></strong><small id="covered-caption"></small></div>
+      <div><span>Pendiente por cubrir</span><strong id="pending-total"></strong><small>Incluye tu parte si aún no la cubriste</small></div>
+    </section>
+    <nav class="quick-nav" aria-label="Ir a una sección"><a href="#people-title">Participantes</a><a href="#bill-title">Factura</a><a href="#payments-title">Pagos</a></nav>
+    <div id="lock-notice" class="notice" hidden>Para modificar la cuenta, desmarca primero los pagos registrados.</div>
+    <div class="workspace">
+      <section class="panel bill-panel" aria-labelledby="bill-title">
+        <div class="section-heading"><div><h2 id="bill-title">Factura</h2><p>Revisa los consumos y asigna cada unidad.</p></div><span class="pill" id="unit-count"></span></div>
+        <details class="settings"><summary>Precios, IVA y propina</summary><div class="settings-body"><p>IVA y propina se calculan sobre el subtotal y se reparten según el consumo de cada persona, antes de cargos.</p><div class="field-pair"><label>IVA (%)<input id="tax-rate" type="number" min="0" max="100" step="0.01" inputmode="decimal"></label><label>Propina (%)<input id="tip-rate" type="number" min="0" max="100" step="0.01" inputmode="decimal"></label></div><div class="totals-lines" id="bill-totals"></div><label class="toggle-label"><input id="edit-products" type="checkbox"> Editar productos, cantidades y precios</label></div></details>
+        <div class="assignment-progress"><div><strong id="assignment-caption"></strong><span id="unassigned-total"></span></div><progress id="assignment-progress" max="44" value="0" aria-label="Unidades asignadas"></progress></div>
+        <label class="search-label"><span>Buscar producto</span><input id="search" type="search" placeholder="Ej. hummus, limonada, pollo…"></label>
+        <label class="toggle-label assignment-filter"><input id="only-unassigned" type="checkbox" aria-controls="products"> Solo productos con unidades sin asignar</label>
+        <div id="products"></div>
+        <button id="add-product" class="button secondary full" hidden>Agregar producto</button>
+        <details class="reference"><summary>Ver factura de referencia</summary><img src="photo_2026-10-26_11-29-24.jpg" alt="Factura original: subtotal C$8,184.47, propina C$818.45, IVA C$1,227.67 y total C$10,230.59" loading="lazy"></details>
+      </section>
+      <div class="people-column">
+        <section class="panel" aria-labelledby="people-title">
+          <div class="section-heading people-heading"><div><h2 id="people-title">Participantes y consumos</h2><p>Cada persona ve exactamente qué le toca.</p></div><div class="people-actions"><span class="pill" id="people-count"></span><button id="share" class="button secondary" type="button" aria-haspopup="dialog" aria-controls="share-dialog" aria-describedby="share-hint" disabled>Compartir</button></div></div>
+          <p id="share-hint" class="hint">Asigna todas las unidades para compartir los importes definitivos por WhatsApp.</p>
+          <form id="add-person" class="add-person"><label class="sr-only" for="person-name">Nombre del participante</label><input id="person-name" placeholder="Nombre del participante" maxlength="60" required><button class="button" type="submit">Agregar</button></form><p class="hint">Cada persona cubre IVA y propina en proporción a su consumo. Si no tiene consumos, no paga cargos.</p><div id="people"></div>
+          <div class="people-grand-total" aria-label="Comprobación del total de participantes">
+            <div class="people-total-line"><span>Gran total de participantes</span><strong id="people-grand-total"></strong></div>
+            <div class="people-total-line"><span>Total de la factura</span><span id="people-bill-total"></span></div>
+            <div class="people-total-line"><span>Diferencia por asignar (incluye cargos)</span><span id="people-total-difference"></span></div>
+            <p id="people-total-status" class="hint" role="status"></p>
+          </div>
+        </section>
+        <section class="panel payments-panel" aria-labelledby="payments-title"><div class="section-heading"><div><h2 id="payments-title">Pagos</h2><p>Un check y sabes cuánto falta.</p></div></div><div class="payment-summary"><div><span>Recibido de los demás</span><strong id="received-total"></strong></div><div><span>Mi parte cubierta</span><strong id="own-covered"></strong></div><div class="collect"><span>Pendiente por cobrar a los demás</span><strong id="collect-total"></strong></div></div><p id="payment-instruction" class="hint"></p><div id="payments"></div><p id="pending-names" class="pending-names"></p></section>
+      </div>
+    </div>
+    <footer>Los datos se guardan en este navegador y dispositivo. Sin cuentas ni conexión.<br>Una cuenta activa · Importes en córdobas (C$)</footer>
+  </main>
+  <dialog id="share-dialog" aria-labelledby="share-title" aria-describedby="share-description">
+    <form id="share-form" class="share-content">
+      <div class="share-header">
+        <span class="share-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.8L3 21l1.3-4.7a9 9 0 1 1 16.7-4.8Z"/><path d="M8 10h8M8 14h5"/></svg></span>
+        <div><h2 id="share-title">Compartir por WhatsApp</h2><p id="share-description">Selecciona a quiénes incluir en el mensaje.</p></div>
+      </div>
+      <div class="share-body">
+        <fieldset class="share-selection"><legend>Detalle de participantes</legend><div id="share-people"></div></fieldset>
+        <p id="share-status" class="hint" role="status" aria-live="polite"></p>
+        <a id="share-retry" class="share-retry" target="_blank" rel="noopener noreferrer" hidden>Abrir mensaje en WhatsApp</a>
+      </div>
+      <div class="share-footer">
+        <p id="share-selection-count" role="status" aria-live="polite">Selecciona al menos un participante.</p>
+        <div class="share-buttons"><button id="share-cancel" class="button secondary" type="button">Cancelar</button><button id="share-send" class="button" type="submit" disabled>Enviar</button></div>
+        <p class="share-delivery-hint">En WhatsApp eliges el chat o grupo y confirmas el envío.</p>
+      </div>
+    </form>
+  </dialog>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
